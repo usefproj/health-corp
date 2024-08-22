@@ -27,7 +27,7 @@ app.use(
     secret: "your-secret-key", // Replace with a secure random string
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false }, // Set to `true` if using HTTPS
+    cookie: { secure: process.env.NODE_ENV === "production" },
   })
 );
 
